@@ -1,0 +1,328 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000; /* Matrix teması için siyah arka plan */
+    margin: 0;
+    color: #0f0; /* Matrix teması için yeşil metin */
+    text-shadow: 0 0 5px #0f0; /* Metinlere hafif yeşil gölge */
+}
+
+.container {
+    background-color: #000; /* Kutular için siyah arka plan */
+    border-radius: 15px;
+    box-shadow: 0px 8px 20px rgba(0, 255, 0, 0.4); /* Yeşil gölge */
+    width: 95%;
+    max-width: 950px; /* Genişletilmiş maksimum genişlik */
+    padding: 40px;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5em; /* Daha büyük başlık */
+    color: #0f0; /* Başlık rengi yeşil */
+}
+
+.fa-globe {
+    color: #0f0; /* İkon rengi */
+    margin-right: 10px;
+}
+
+.panel {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    gap: 30px;
+    flex-wrap: wrap; /* Ekran küçüldüğünde alt alta gelsin */
+}
+
+.bolum {
+    flex: 1;
+    padding: 30px;
+    background-color: #111; /* Koyu ton */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 255, 0, 0.3); /* Hafif yeşil gölge */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bolum:hover {
+    transform: translateY(-6px); /* Yukarı kaydırma efekti */
+    box-shadow: 0px 8px 16px rgba(0, 255, 0, 0.4); /* Daha güçlü yeşil gölge */
+}
+
+.bolum h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 1.7em; /* Daha büyük alt başlık */
+    color: #0f0; /* Alt başlık rengi yeşil */
+}
+
+.bolum h2 .fas {
+    margin-right: 12px;
+    color: #0f0;
+}
+
+.bolum h3 {
+    font-size: 1.5em;
+    color: #0f0;
+}
+
+.bolum h3 .fas {
+    margin-right: 10px;
+    color: #0f0;
+}
+
+#sorgulamaFormu label, #olusturmaBolumu label {
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #0f0;
+}
+
+input[type="text"], select {
+    width: calc(100% - 26px);
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #0f0;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #000; /* Siyah arka plan */
+    color: #0f0;
+    box-shadow: inset 0 2px 4px rgba(0, 255, 0, 0.2);
+}
+
+input::placeholder {
+    color: #070;
+}
+
+.uzantilar, .secenekler {
+    margin-bottom: 20px;
+}
+
+.uzantilar label, .secenekler label {
+    margin-right: 12px;
+    font-size: 0.95em;
+    display: flex;
+    align-items: center;
+    color: #0f0;
+    cursor: pointer;
+}
+
+.uzantilar input, .secenekler input, .secenekler select{
+    margin-right: 6px;
+    margin-top: 0;
+    cursor: pointer;
+}
+
+.secenekler label[for="uzantiSecim"], .secenekler label[for="sablonSecim"], .secenekler label[for="kelimeSayisi"] {
+    margin-top: 15px;
+    font-weight: 600;
+    display: block;
+}
+
+.secenekler label[for="jenerikKelime"] {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.secenekler label[for="kategoriSecim"] {
+    margin-top: 5px;
+}
+
+.filtreTipi {
+    margin-bottom: 15px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.filtreTipi label {
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+.secenekler label[for="harfFiltresi"], .secenekler label[for="kelimeFiltresi"]{
+    font-weight: bold;
+    display: block;
+    margin: 10px 0;
+}
+
+button {
+    padding: 12px 25px;
+    background-color: #0f0; /* Yeşil buton rengi */
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+button:hover {
+    background-color: #003300; /* Koyu yeşil hover rengi */
+    transform: scale(1.05); /* Büyüme efekti */
+}
+
+.sonuclar {
+    margin-top: 40px;
+}
+
+.sonuclar h2 {
+    margin-bottom: 15px;
+    color: #0f0;
+}
+
+#sonucListesi {
+    border: 1px solid #0f0;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #000;
+}
+
+#sonucListesi p {
+    margin: 8px 0;
+    font-size: 1em;
+}
+
+.bos {
+    color: #0f0; /* Yeşil metin */
+}
+
+.dolu {
+    color: #0f0; /* Kırmızı metin */
+}
+
+.error {
+    color: #0f0;
+}
+
+.jenerik {
+    color: #0f0; /* Altın rengi */
+}
+
+#dusenDomainlerBolumu {
+    margin-top: 40px;
+}
+
+#dusenDomainlerBolumu h2 {
+    margin-bottom: 15px;
+    color: #0f0;
+}
+
+#dusenDomainListesi {
+    border: 1px solid #0f0;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #000;
+}
+
+#dusenDomainListesi p {
+    margin: 8px 0;
+    font-size: 1em;
+}
+
+.fa-unlink {
+    margin-right: 8px;
+    color: #0f0;
+}
+
+#bosJenerikDomainlerBolumu {
+    margin-top: 30px;
+}
+
+#bosJenerikDomainlerBolumu h2 {
+    margin-bottom: 15px;
+    color: #0f0;
+}
+
+#bosJenerikDomainListesi {
+    border: 1px solid #0f0;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #000;
+}
+
+#bosJenerikDomainListesi p {
+    margin: 8px 0;
+    font-size: 1em;
+}
+
+.fa-star {
+    margin-right: 8px;
+    color: #0f0;
+}
+
+#harfFiltresiAlani, #kelimeFiltresiAlani {
+    margin-bottom: 15px;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .panel {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .bolum {
+        margin: 0 0 20px 0;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .bolum h2 {
+        font-size: 1.4em;
+    }
+
+    input[type="text"], button, #sonucListesi p, .uzantilar label, .secenekler label, #dusenDomainListesi p, #bosJenerikDomainListesi p {
+        font-size: 0.95em;
+    }
+
+    .fa-search, .fa-plus-circle, .fa-globe, .fa-list-alt, .fa-hourglass-end, .fa-star {
+        margin-right: 8px;
+    }
+
+    #dusenDomainlerBolumu, #bosJenerikDomainlerBolumu {
+        margin-top: 20px;
+    }
+
+    .secenekler label[for="uzantiSecim"], .secenekler label[for="sablonSecim"], .secenekler label[for="kelimeSayisi"] {
+        margin-top: 10px;
+    }
+
+    #harfFiltresiAlani, #kelimeFiltresiAlani {
+        margin-bottom: 10px;
+    }
+}
+
+.jenerik-link {
+    display: block;
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #0f0;
+    border: 1px solid #0f0;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: fit-content;
+}
+
+.jenerik-link:hover {
+    background-color: #0f0;
+    color: #000;
+}
